@@ -10,8 +10,8 @@
       property="og:image"
       content="https://cdn-icons-png.freepik.com/256/11762/11762483.png"
     />
-    <meta property="og:url" content="https://live.alimad.xyz" />
-    <link rel="canonical" href="https://live.alimad.xyz/" />
+    <meta property="og:url" content="https://live.alimad.co" />
+    <link rel="canonical" href="https://live.alimad.co/" />
     <link rel="icon" href="https://cdn-icons-png.freepik.com/256/11762/11762483.png" />
     <meta name="twitter:card" content="summary" />
     <title>Live API</title>
@@ -234,7 +234,7 @@
         </div>
       </div>
 
-      <p><strong>Base URL:</strong> <code>https://live.alimad.xyz</code></p>
+      <p><strong>Base URL:</strong> <code>https://live.alimad.co</code></p>
       <p>Track users in real-time using hashed IPs. No login or config needed</p>
     </header>
     <section>
@@ -271,7 +271,7 @@
       <div class="endpoint">
         <div class="endpoint-title">
           <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/ping?app=[AppId]</span>
+          <span class="endpoint-url">/ping?app=&lt;appId&gt;</span>
         </div>
         <p>Registers this user as "online" and returns the current user count (including this user).</p>
 
@@ -303,7 +303,7 @@
       <div class="endpoint">
         <div class="endpoint-title">
           <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/get?app=[AppId]</span>
+          <span class="endpoint-url">/get?app=&lt;appId&gt;</span>
         </div>
         <p>Checks the current user count <em>without</em> registering this user as online.</p>
         <p>Response format is the same as <code>/ping</code>.</p>
@@ -312,7 +312,7 @@
       <div class="endpoint">
         <div class="endpoint-title">
           <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/leave?app=[AppId]</span>
+          <span class="endpoint-url">/leave?app=&lt;appId&gt;</span>
         </div>
         <p>Manually removes your user from the online count.</p>
         <p>Response: <code>Done</code></p>
@@ -324,14 +324,14 @@
           <span class="endpoint-url">/embed</span>
         </div>
         <p>One line embed into any page.</p>
-        <code>&lt;iframe src="https://live.alimad.xyz/embed" style="border:0;width:85px;height:26px;"&gt;&lt;/iframe&gt;</code><br>
-        <iframe src="/embed" style="border:0;width:85px;height:26px;"></iframe>
+        <code>&lt;iframe src="https://live.alimad.co/embed" style="border:0;width:85px;height:26px;"&gt;&lt;/iframe&gt;</code><br>
+        <iframe src="/embed?app=&lt;appId&gt;" style="border:0;width:85px;height:26px;"></iframe>
       </div>
 
       <div class="endpoint">
         <div class="endpoint-title">
           <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/stats?app=[AppId]</span>
+          <span class="endpoint-url">/stats?app=&lt;appId&gt;</span>
         </div>
         <p>Returns statistics about your app's usage in JSON format.</p>
 
@@ -365,7 +365,7 @@
       <div class="endpoint">
         <div class="endpoint-title">
           <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/stats/view?app=[AppId]</span>
+          <span class="endpoint-url">/stats/view?app=&lt;appId&gt;</span>
         </div>
         <p>View your stats in a pretty HTML page (great for quick checks).</p>
         <iframe src="/stats/view?app=live" width="100%" height="500px"></iframe>
@@ -385,18 +385,18 @@
         </div>
         <div class="grid-item">
           <h3>403 Forbidden</h3>
-          <p>Your App ID contains forbidden characters. <img class="emoji" width="32px" height="32px" src="https://emoji.slack-edge.com/T0266FRGM/skulk/b5157bcc16f5d2ac.png"></p>
-          <p>I TOLD YOU NOT TO TRY XSS PAYLOADS <img class="emoji" width="32px" height="32px" src="https://emoji.slack-edge.com/T0266FRGM/heavysob/55bf09f6c9d93d08.png"></p> 
+          <p>Your App ID contains forbidden characters. <img class="emoji" width="16px" height="16px" src="https://e.alimad.co/skulk:16"></p>
+          <p>I TOLD YOU NOT TO TRY XSS PAYLOADS <img class="emoji" width="16px" height="16px" src="https://e.alimad.co/heavysob:16"></p>
         </div>
         <div class="grid-item">
           <h3>429 Too Many Requests</h3>
-          <p>Chill bro, it's 50 requests per minute. Please do at most one request per 3 seconds</p>
+          <p>Chill bro, it's 50 requests per minute. Please do at most 20 request per minute</p>
         </div>
       </div>
     </section>
 
     <footer style="margin-top: 3rem; border-top: 1px solid #333; padding-top: 1rem; text-align: center;">
-      <p>Made by <a href="https://alimad.xyz">Muhammad Ali</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/alimadcorp/isonline">Github Repo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Alimad Surviellance. All rights reserved</p>
+      <p>Made by <a href="https://alimad.co">Muhammad Ali</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/alimadcorp/isonline">Github Repo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Alimad Surviellance. All rights reserved</p>
     </footer>
 
     <script>
@@ -483,7 +483,7 @@
 
         successText.textContent = "Looks good! Copy the embed code below.";
 
-        const html = `<a target="_blank" href="https://live.alimad.xyz/stats/view?app=${app}"><div id="live-counter" style="font-family: sans-serif; color: #4CAF50; display: inline-flex; align-items: center; gap: 6px;">
+        const html = `<a target="_blank" href="https://live.alimad.co/stats/view?app=${app}"><div id="live-counter" style="font-family: sans-serif; color: #4CAF50; display: inline-flex; align-items: center; gap: 6px;">
   <span style="width: 10px; height: 10px; border-radius: 50%; background: #4CAF50;" id="live-dot"></span>
   <span id="live-count">Loading...</span>
 </div></a>
@@ -492,7 +492,7 @@ async function updateGlobalAppUserCount() {
   const dot = document.getElementById('live-dot');
   const count = document.getElementById('live-count');
   try {
-    const response = await fetch('https://live.alimad.xyz/ping?app=${app}');
+    const response = await fetch('https://live.alimad.co/ping?app=${app}');
     if (response.ok) {
       const userCount = await response.text();
       dot.style.background = '#4CAF50';

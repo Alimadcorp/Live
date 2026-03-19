@@ -19,10 +19,10 @@ function validate(str) {
     };
   }
   
-  if (str.length < 4) {
+  if (str.length < 1) {
     return {
       valid: false,
-      error: "IDs shorter than 4 characters are reserved",
+      error: "IDs shorter than 1 characters are ducked",
       type: "reserved",
     };
   }
